@@ -1,20 +1,13 @@
-data BookInfo = Book Int String [String]
-                deriving (Show)
+type CustomerID = Int
+type BookID = Int
+type Address = [String]
 
-bookID :: BookInfo -> Int
-bookID (Book id title authors) = id
+data BookInfo = Book { bookID :: BookID
+                     , bookTitle :: String
+                     , bookAuthor :: [String]
+                     } deriving (Show)
 
-bookTitle :: BookInfo -> String
-bookTitle (Book id title authors) = title
-
-bookAuthors :: BookInfo -> [String]
-bookAuthors (Book id title authors) = authors
-
-nicerID :: BookInfo -> Int
-nicerID (Book id _ _) = id
-
-nicerTitle :: BookInfo -> String
-nicerTitle (Book _ title _) = title
-
-nicerAuthors :: BookInfo -> [String]
-nicerAuthors (Book _ _ authors) = authors
+data Customer = Customer { customerID :: CustomerID
+                         , customerName :: String
+                         , customerAddress :: Address
+                         } deriving (Show)
