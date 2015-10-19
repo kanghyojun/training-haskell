@@ -11,3 +11,9 @@ data Customer = Customer { customerID :: CustomerID
                          , customerName :: String
                          , customerAddress :: Address
                          } deriving (Show)
+
+customer2 = Customer {
+              customerID = 271828
+            , customerAddress = ["Abc", "New york", "blah"]
+            , customerName = "Hello World"
+            }
